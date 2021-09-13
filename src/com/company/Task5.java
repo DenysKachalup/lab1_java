@@ -1,13 +1,15 @@
 package com.company;
 
 public class Task5 {
-    private int[][] matrix = new int[4][5];
+    private int[][] matrix;
 
-    public Task5() {
-        CreatingMatrix();
+    public Task5(final int rol,final int col) {
+        this.matrix = creatingMatrix(rol,col);
     }
 
-    public void CreatingMatrix() {
+    public int[][] creatingMatrix(final int rol,final int col) {
+        int [][]matrix = new int[rol][col];
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 matrix[i][j] = (int)(Math.random()*10);
@@ -15,23 +17,23 @@ public class Task5 {
             }
             System.out.println("");
         }
-
+        return matrix;
     }
-    public int[][] Transpose(){
+    public int[][] transpose(){
         final int [][]array = new int[matrix[0].length][matrix.length];
         for(int i = 0;i <matrix[0].length;i++) {
             for (int j = 0; j < matrix.length; j++) {
                 array[i][j] = matrix[j][i];
                 System.out.print(array[i][j] + "   ");
             }
-            System.out.println("");
+            System.out.println();
         }
         return array;
     }
 
     public static void main(final String[] args) {
-        final Task5 A = new Task5();
-        final int[][] arrayAB = A.Transpose();
+        final Task5 task = new Task5(4,6);
+        final int[][] arrayAB = task.transpose();
 
     }
 }

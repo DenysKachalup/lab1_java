@@ -3,11 +3,12 @@ package com.company;
 public class Task2 {
     private String[] arrayStr;
 
-    public Task2() {
-        this.arrayStr = new String[]{"12", "1", "12134","121"};
+    public Task2(final String[] arrayStr) {
+        this.arrayStr = arrayStr;
+
     }
 
-    public int CountString(char symbol) {
+    public int countString(final char symbol) {
         int amount = 0;
 
         for (int i = 0; i < arrayStr.length; i++) {
@@ -20,9 +21,9 @@ public class Task2 {
         return amount;
     }
 
-    public static void main(String[] args) {
-        Task2 A = new Task2();
-        System.out.println( A.CountString('1'));
+    public static void main(final String[] args) {
+        Task2 task = new Task2(new String[]{"12", "1", "12134","121"});
+        System.out.println( task.countString('1'));
 
     }
 }

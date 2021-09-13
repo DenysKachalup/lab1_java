@@ -1,27 +1,30 @@
 package com.company;
 
 public class Task6 {
-    private int[][] arrayA = new int[4][2];
-    private int[][] arrayB = new int[2][3];
+    private int[][] arrayA;
+    private int[][] arrayB;
 
-    public Task6() {
-        CreatingMatrix(this.arrayA);
-        CreatingMatrix(this.arrayB);
+    public Task6(final int rolA,final int col,final int colB) {
+        this.arrayA = creatingMatrix(rolA,col);
+        this.arrayB = creatingMatrix(col,colB);
     }
 
-    public void CreatingMatrix(final int[][] matrix) {
+    public int[][] creatingMatrix(final int rol,final int col) {
+        int [][]matrix = new int[rol][col];
+
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                matrix[i][j] = (int) (Math.random() * 10);
-                System.out.print(matrix[i][j] + "   ");
+                matrix[i][j] = (int)(Math.random()*10);
+                System.out.print(matrix[i][j] + " ");
             }
             System.out.println("");
         }
-        System.out.println("");
+        return matrix;
     }
-    public int[][] MultiplicationMatrix() throws RuntimeException{
+
+    public int[][] multiplicationMatrix() throws RuntimeException{
         if(arrayA[0].length != arrayB.length)
-            throw new RuntimeException("qwe");
+            throw new RuntimeException("Error");
 
         final int[][] result = new int[arrayA.length][arrayB[0].length];
 
@@ -41,8 +44,8 @@ public class Task6 {
     public static void main(final String[] args) {
 
         try {
-            final Task6 A = new Task6();
-            final int[][] multiMatrix = A.MultiplicationMatrix();
+            final Task6 task = new Task6(4,2,5);
+            final int[][] multiMatrix = task.multiplicationMatrix();
         }
         catch (final RuntimeException e){
             System.out.println(e);

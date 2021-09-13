@@ -3,10 +3,10 @@ package com.company;
 public class Task4_FizzBuzz {
 
     public static void main(final String [] args) {
-        ChangeFizzBuzz();
+        changeFizzBuzz();
     }
 
-    public static void ChangeFizzBuzz(){
+    public static void changeFizzBuzz(){
         for(int i = 1; i <= 100;i++){
             if( i%3== 0 && !(i %5 == 0))
                 System.out.print(" Fizz ");

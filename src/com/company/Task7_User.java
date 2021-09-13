@@ -35,17 +35,14 @@ public class Task7_User {
     }
 
     public static void main(final String[] args) {
-        final Task7_User A = new Task7_User("Denys","Mars",20,"denys@gmail.com");
-        final Task7_User B = new Task7_User("Denys","Mars",20,"denys@gmail.com");
+        final Task7_User task1 = new Task7_User("Denys","Mars",20,"denys@gmail.com");
+        final Task7_User task = new Task7_User("Denys","Mars",20,"denys@gmail.com");
 
-        if (A.hashCode() == B.hashCode() && A.equals(B)) {
+        if (task1.hashCode() == task.hashCode() && task1.equals(task)) {
             System.out.print("Rivno");
         }
         else {
             System.out.print("NE rivno");
         }
-
-
     }
-
 }
