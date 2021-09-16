@@ -1,7 +1,7 @@
 package com.company;
 
 public class Task1 {
-    private String [] arrayStr;
+    private String[] arrayStr;
 
     public Task1(final String[] arrayStr) {
         this.arrayStr = arrayStr;
@@ -22,8 +22,9 @@ public class Task1 {
             }
         }
     }
+
     public static void main(final String[] args) {
-        final Task1 task = new Task1(new String[]{"12", "1", "1234","123"});
+        final Task1 task = new Task1(new String[]{"12", "1", "1234", "123"});
 
         task.sortBubble();
 

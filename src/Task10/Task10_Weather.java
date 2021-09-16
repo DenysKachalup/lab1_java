@@ -1,5 +1,7 @@
 package Task10;
 
+import java.util.Objects;
+
 public class Task10_Weather {
     private boolean rain = false;
     private boolean sun = true;
@@ -63,6 +65,20 @@ public class Task10_Weather {
     public void randomRainSun() {
         this.setRain(Math.random() < 0.5D);
         this.setSun(Math.random() < 0.5D);
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Task10_Weather)) return false;
+        final Task10_Weather that = (Task10_Weather) o;
+        return this.rain == that.rain && this.sun == that.sun
+                && this.maxTemp == that.maxTemp && this.minTemp == that.minTemp;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rain, sun, maxTemp, minTemp);
     }
 }
 

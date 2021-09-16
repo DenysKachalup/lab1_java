@@ -18,7 +18,7 @@ public class Task3 {
 
 
     public void mergeFigureSymbol() {
-        for(int i = 0 ; i < Math.max(figure.length,symbol.length); i++) {
+        for (int i = 0; i < Math.max(figure.length, symbol.length); i++) {
             if (i < figure.length)
                 this.string = this.string + figure[i];
             if (i < symbol.length)
@@ -34,7 +34,7 @@ public class Task3 {
     }*/
 
     public static void main(final String[] args) {
-        final Task3 task = new Task3(new char[]{'a','b','c','d','e'},new int[]{1,2,3},"");
+        final Task3 task = new Task3(new char[]{'a', 'b', 'c', 'd', 'e'}, new int[]{1, 2, 3}, "");
 
         task.mergeFigureSymbol();
         System.out.println(task.getString());

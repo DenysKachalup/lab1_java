@@ -12,7 +12,7 @@ public class Task2 {
         int amount = 0;
 
         for (int i = 0; i < arrayStr.length; i++) {
-            for (int j = 0; j<arrayStr[i].length(); j++) {
+            for (int j = 0; j < arrayStr[i].length(); j++) {
                 if (arrayStr[i].charAt(j) == symbol) {
                     amount++;
                 }
@@ -22,8 +22,8 @@ public class Task2 {
     }
 
     public static void main(final String[] args) {
-        Task2 task = new Task2(new String[]{"12", "1", "12134","121"});
-        System.out.println( task.countString('1'));
+        Task2 task = new Task2(new String[]{"12", "1", "12134", "121"});
+        System.out.println(task.countString('1'));
 
     }
 }
