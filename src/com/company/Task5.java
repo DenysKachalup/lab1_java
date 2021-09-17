@@ -13,9 +13,7 @@ public class Task5 {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 matrix[i][j] = (int) (Math.random() * 10);
-                System.out.print(matrix[i][j] + " ");
             }
-            System.out.println("");
         }
         return matrix;
     }
@@ -25,9 +23,7 @@ public class Task5 {
         for (int i = 0; i < matrix[0].length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 array[i][j] = matrix[j][i];
-                System.out.print(array[i][j] + "   ");
             }
-            System.out.println();
         }
         return array;
     }
@@ -35,6 +31,5 @@ public class Task5 {
     public static void main(final String[] args) {
         final Task5 task = new Task5(4, 6);
         final int[][] arrayAB = task.transpose();
-
     }
 }

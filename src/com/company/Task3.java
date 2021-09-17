@@ -11,11 +11,9 @@ public class Task3 {
         this.string = string;
     }
 
-
     public String getString() {
         return string;
     }
-
 
     public void mergeFigureSymbol() {
         for (int i = 0; i < Math.max(figure.length, symbol.length); i++) {
@@ -25,13 +23,6 @@ public class Task3 {
                 this.string = this.string + symbol[i];
         }
     }
-
-    /*public int EqualsFigureSymbol(final char[] symbol,final int[] figure) {
-        if(symbol.length > figure.length)
-            return symbol.length;
-
-        else return figure.length;
-    }*/
 
     public static void main(final String[] args) {
         final Task3 task = new Task3(new char[]{'a', 'b', 'c', 'd', 'e'}, new int[]{1, 2, 3}, "");

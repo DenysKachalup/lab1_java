@@ -1,14 +1,12 @@
 package com.company;
 
 
-import java.util.Objects;
-
-public class Task8_CustomDouble {
+public class CustomDouble {
     private int integer;
     private double fractions;
     private boolean minus;
 
-    public Task8_CustomDouble(final int integer, final double fractions) {
+    public CustomDouble(final int integer, final double fractions) {
         setInteger(integer);
         setFractions(fractions);
     }
@@ -50,8 +48,8 @@ public class Task8_CustomDouble {
         }
     }
 
-    public Task8_CustomDouble add(final Task8_CustomDouble b) {
-        final Task8_CustomDouble res = new Task8_CustomDouble(0, 0);
+    public CustomDouble add(final CustomDouble b) {
+        final CustomDouble res = new CustomDouble(0, 0);
 
         final double result = this.toDouble() + b.toDouble();
 
@@ -61,8 +59,8 @@ public class Task8_CustomDouble {
         return res;
     }
 
-    public Task8_CustomDouble subtraction(final Task8_CustomDouble b) {
-        final Task8_CustomDouble res = new Task8_CustomDouble(0, 0);
+    public CustomDouble subtraction(final CustomDouble b) {
+        final CustomDouble res = new CustomDouble(0, 0);
 
         final double result = this.toDouble() - b.toDouble();
 
@@ -83,11 +81,11 @@ public class Task8_CustomDouble {
         return res;
     }
 
-    public boolean equalsMax(final Task8_CustomDouble b) {
+    public boolean equalsMax(final CustomDouble b) {
         return this.toDouble() > b.toDouble();
     }
 
-    public boolean equalsMin(final Task8_CustomDouble b) {
+    public boolean equalsMin(final CustomDouble b) {
         return this.toDouble() < b.toDouble();
     }
 
@@ -103,7 +101,7 @@ public class Task8_CustomDouble {
     public boolean equals(final Object o) {
         if (this == o) return true;
         if (!(o.getClass() == this.getClass())) return false;
-        final Task8_CustomDouble that = (Task8_CustomDouble) o;
+        final CustomDouble that = (CustomDouble) o;
         return getInteger() == that.getInteger()
                 && that.getFractions() == getFractions()
                 && isMinus() == that.isMinus();
@@ -115,8 +113,8 @@ public class Task8_CustomDouble {
     }
 
     public static void main(final String[] args) {
-        final Task8_CustomDouble task1 = new Task8_CustomDouble(-2, 0.3);
-        final Task8_CustomDouble task2 = new Task8_CustomDouble(4, 0.8);
+        final CustomDouble task1 = new CustomDouble(-2, 0.3);
+        final CustomDouble task2 = new CustomDouble(4, 0.8);
 
         System.out.println(task1.subtraction(task2).toDouble());
         System.out.println(task1.add(task2).toDouble());
