@@ -22,9 +22,8 @@ public class Driver {
     }
 
     public void setAge(final int age) {
-        if(age >= 18)
+        if (age >= 18)
             this.age = age;
     }
-
 }
 

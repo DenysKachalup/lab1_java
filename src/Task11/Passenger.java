@@ -3,6 +3,7 @@ package Task11;
 public class Passenger {
     private String namePassenger;
     private String numberPhone;
+    private Order order;
 
     public Passenger(final String namePass, final String numberPhone) {
         this.namePassenger = namePass;
@@ -19,6 +20,10 @@ public class Passenger {
 
     public String getNumberPhone() {
         return numberPhone;
+    }
+
+    public String getOrder() {
+        return order.toString();
     }
 
     public void setNumberPhone(final String numberPhone) {

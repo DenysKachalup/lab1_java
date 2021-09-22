@@ -1,7 +1,5 @@
 package Task10;
 
-import java.util.Objects;
-
 public class Weather {
     private boolean rain = false;
     private boolean sun = true;

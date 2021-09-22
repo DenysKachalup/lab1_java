@@ -8,7 +8,7 @@ public class Task2 {
 
     }
 
-    public int countString(final char symbol) {
+    public int countChar(final char symbol) {
         int amount = 0;
 
         for (int i = 0; i < arrayStr.length; i++) {
@@ -23,7 +23,7 @@ public class Task2 {
 
     public static void main(final String[] args) {
         Task2 task = new Task2(new String[]{"12", "1", "12134", "121"});
-        System.out.println(task.countString('1'));
+        System.out.println(task.countChar('1'));
 
     }
 }

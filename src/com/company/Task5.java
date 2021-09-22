@@ -20,6 +20,7 @@ public class Task5 {
 
     public int[][] transpose() {
         final int[][] array = new int[matrix[0].length][matrix.length];
+
         for (int i = 0; i < matrix[0].length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 array[i][j] = matrix[j][i];

@@ -2,8 +2,8 @@ package Task10;
 
 public class Day {
     private final String day;
-    private Weather weather;
-    private final String[] todayIsDay = new String[]{"Понеділок", "Вівторок", "Середа", "Четвер", "ПятницЯ", "Субота", "Неділя"};
+    private final Weather weather;
+    private static final String[] todayIsDay = new String[]{"Понеділок", "Вівторок", "Середа", "Четвер", "ПятницЯ", "Субота", "Неділя"};
 
     public Day(final int day) {
         this.day = this.todayIsDay[day];
@@ -18,9 +18,9 @@ public class Day {
     @Override
     public boolean equals(final Object o) {
         if (this == o) return true;
-        if (!(o instanceof Day)) return false;
+        if (this.getClass() != o.getClass()) return false;
         final Day that = (Day) o;
-        return this.day == that.day;
+        return this.day.equals(that.day);
     }
 
     @Override

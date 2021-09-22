@@ -17,18 +17,18 @@ public class User {
     public boolean equals(final Object o) {
         if (this == o)
             return true;
-        if (this.getClass() != o.getClass() || o == null)
+        if (this.getClass() != o.getClass())
             return false;
         final User that = (User) o;
-        return age == that.age && firstName == that.firstName
-                && lastName == that.lastName
-                &&email == that.email;
+        return age == that.age && firstName.equals(that.firstName)
+                && lastName.equals(that.lastName)
+                && email.equals(that.email);
     }
 
     @Override
     public int hashCode() {
         final int result = (firstName.hashCode() + lastName.hashCode() + email.hashCode() + age);
-        return firstName.hashCode() + lastName.hashCode() + age + email.hashCode();
+        return result;
     }
 
     public static void main(final String[] args) {

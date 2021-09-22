@@ -1,6 +1,5 @@
 package com.company;
 
-
 public class CustomDouble {
     private int integer;
     private double fractions;
@@ -9,6 +8,13 @@ public class CustomDouble {
     public CustomDouble(final int integer, final double fractions) {
         setInteger(integer);
         setFractions(fractions);
+    }
+
+    public CustomDouble(final int integer) {
+        setInteger(integer);
+    }
+
+    public CustomDouble() {
     }
 
     public boolean isMinus() {
@@ -49,7 +55,7 @@ public class CustomDouble {
     }
 
     public CustomDouble add(final CustomDouble b) {
-        final CustomDouble res = new CustomDouble(0, 0);
+        final CustomDouble res = new CustomDouble();
 
         final double result = this.toDouble() + b.toDouble();
 
@@ -60,7 +66,7 @@ public class CustomDouble {
     }
 
     public CustomDouble subtraction(final CustomDouble b) {
-        final CustomDouble res = new CustomDouble(0, 0);
+        final CustomDouble res = new CustomDouble();
 
         final double result = this.toDouble() - b.toDouble();
 
@@ -69,10 +75,35 @@ public class CustomDouble {
 
         return res;
     }
+    public CustomDouble multiplication(final CustomDouble b) {
+        final CustomDouble res = new CustomDouble();
+
+        final double result = this.toDouble() * b.toDouble();
+
+        res.setInteger((int) result);
+        res.setFractions(result % 1);
+
+        return res;
+    }
+
+    public CustomDouble divide(final CustomDouble b) {
+        final CustomDouble res = new CustomDouble();
+
+        if (b.toDouble() == 0) {
+            throw new ArithmeticException("На нуль не ділиться");
+        }
+
+        final double result = this.toDouble() / b.toDouble();
+
+        res.setInteger((int) result);
+        res.setFractions(result % 1);
+
+        return res;
+    }
 
     public double toDouble() {
         double res = this.fractions + this.integer;
-        if (this.minus == true) {
+        if (this.minus) {
             res *= -1;
         } else {
             res *= 1;
@@ -81,11 +112,15 @@ public class CustomDouble {
         return res;
     }
 
-    public boolean equalsMax(final CustomDouble b) {
+    public boolean greaterEqual(final CustomDouble b) {
+        return this.toDouble() == b.toDouble();
+    }
+
+    public boolean greaterMax(final CustomDouble b) {
         return this.toDouble() > b.toDouble();
     }
 
-    public boolean equalsMin(final CustomDouble b) {
+    public boolean greaterMin(final CustomDouble b) {
         return this.toDouble() < b.toDouble();
     }
 
@@ -113,11 +148,17 @@ public class CustomDouble {
     }
 
     public static void main(final String[] args) {
-        final CustomDouble task1 = new CustomDouble(-2, 0.3);
-        final CustomDouble task2 = new CustomDouble(4, 0.8);
+        try {
+            final CustomDouble task1 = new CustomDouble(-2, 0.3);
+            final CustomDouble task2 = new CustomDouble(4, 0.8);
 
-        System.out.println(task1.subtraction(task2).toDouble());
-        System.out.println(task1.add(task2).toDouble());
+            System.out.println(task1.subtraction(task2).toDouble());
+            System.out.println(task1.add(task2).toDouble());
+        }
+        catch (final ArithmeticException e)
+        {
+            System.out.println(e.getMessage());
+
+        }
     }
-
 }

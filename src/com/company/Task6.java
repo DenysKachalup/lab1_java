@@ -1,16 +1,16 @@
 package com.company;
 
 public class Task6 {
-    private int[][] arrayA;
-    private int[][] arrayB;
+    private final int[][] matrixA;
+    private final int[][] matrixB;
 
     public Task6(final int rolA, final int col, final int colB) {
-        this.arrayA = creatingMatrix(rolA, col);
-        this.arrayB = creatingMatrix(col, colB);
+        this.matrixA = creatingMatrix(rolA, col);
+        this.matrixB = creatingMatrix(col, colB);
     }
 
     public int[][] creatingMatrix(final int rol, final int col) {
-        int[][] matrix = new int[rol][col];
+        final int[][] matrix = new int[rol][col];
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
@@ -20,16 +20,14 @@ public class Task6 {
         return matrix;
     }
 
-    public int[][] multiplicationMatrix() throws RuntimeException {
-        if (arrayA[0].length != arrayB.length)
-            throw new RuntimeException("Error");
+    public int[][] multiplicationMatrix() {
 
-        final int[][] result = new int[arrayA.length][arrayB[0].length];
+        final int[][] result = new int[matrixA.length][matrixB[0].length];
 
-        for (int i = 0; i < arrayA.length; i++) {
-            for (int j = 0; j < arrayB[0].length; j++) {
-                for (int k = 0; k < arrayA[0].length; k++) {
-                    result[i][j] += arrayA[i][k] * arrayB[k][j];
+        for (int i = 0; i < matrixA.length; i++) {
+            for (int j = 0; j < matrixB[0].length; j++) {
+                for (int k = 0; k < matrixA[0].length; k++) {
+                    result[i][j] += matrixA[i][k] * matrixB[k][j];
                 }
             }
         }
@@ -37,12 +35,8 @@ public class Task6 {
     }
 
     public static void main(final String[] args) {
-
-        try {
             final Task6 task = new Task6(4, 2, 5);
             final int[][] multiMatrix = task.multiplicationMatrix();
-        } catch (final RuntimeException e) {
-            System.out.println(e.getMessage());
-        }
+
     }
 }
